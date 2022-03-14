@@ -74,10 +74,12 @@ const cameraAngle = 1;
 
 window.addEventListener("mousemove", (event) => {
   cursor.x = (event.clientX / sizes.width - 0.5) * cameraAngle;
-  cursor.y = - (event.clientY / sizes.height - 0.5) * cameraAngle;
-  console.log(Math.sin(cursor.x * Math.PI * 2) * 2, Math.cos(cursor.x * Math.PI * 2) * 2);
+  cursor.y = -(event.clientY / sizes.height - 0.5) * cameraAngle;
+  console.log(
+    Math.sin(cursor.x * Math.PI * 2) * 2,
+    Math.cos(cursor.x * Math.PI * 2) * 2
+  );
 });
-
 
 const tick = () => {
   const deltaTime = clock.getDelta();
